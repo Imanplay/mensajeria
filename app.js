@@ -15,10 +15,15 @@ function enviarMensaje(){
 function displayMensaje (sender, text){
     const mensajeContainer = document.getElementById('mensajes');
     const divMensaje = document.createElement('div');
-    divMensaje.className = sender === 'user' ? 'user-mensaje': 'otro-mensaje';
+    const divMensaje2 = document.createElement('div')
+    divMensaje2.className = sender === 'otro' ? 'otro-mensaje':
+    divMensaje2.innerText = text;
+    divMensaje2.style.textAlign = 'right';
+    divMensaje.className = sender === 'user' ? 'user-mensaje':
     divMensaje.innerText = text;
-    divMensaje.style.textAlign = 'right';
+    divMensaje.style.textAlign = 'left';
     mensajeContainer.appendChild(divMensaje);
+    mensajeContainer.appendChild(divMensaje2);
 }
 
 function handleKeyPrees(event){
